@@ -1,7 +1,8 @@
 &nbsp;&nbsp;&nbsp;&nbsp;英文好的同学建议直接阅读Vitalik Buterin（V神）原文 [A Prehistory of the Ethereum Protocol
 ](https://vitalik.ca/general/2017/09/14/prehistory.html)
-### 《以太坊协议史前回忆》
 
+
+<h1 align="center"> 《以太坊协议史前回忆》 </h1>
 
 
 &nbsp;&nbsp;&nbsp;&nbsp;虽然当前以太坊协议背后的想法大体上已经成熟了两年多，但以太坊并未以目前的概念立刻面世并完全形成。在这条区块链启动之前，以太坊协议经历了数次重要的演变和设计决定。本文目的在于介绍以太坊协议诞生到启动经历的多次演变,而实现协议付出大量的工作, 比如 Geth， cppethereum， pyethereum, and EthereumJ，
