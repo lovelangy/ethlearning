@@ -55,4 +55,10 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;Gavin在人们对以太坊的看法转变方面也功不可没。有些人把以太坊看作一个可编程的数字货币平台，基于区块链的合约，根据事先约定的规则持有和转移数字资产，他使人相信以太坊是一个通用目的的计算平台。这起源于一些关注点和术语的微妙变化，稍后随着“Web3”的概念深入人心而更具影响力。Web3把以太坊视为去中心化技术的一部分，去中心化技术的另外两个重要组成部分是whisper和Swam。
 
- ![gavwoodmessage](https://vitalik.ca/images/prehistory-files/web3suite.png)
+<img src="https://vitalik.ca/images/prehistory-files/web3suite.png" width="80%">
+
+2014年初前后，以太坊也做了一些基于其他人建议的修改。在Andrew Miller和其他人的想法建议下，我们最终退回到基于栈的架构。
+
+Charles Hoskinson suggested the switch from Bitcoin's SHA256 to the newer SHA3 (or, more accurately, keccak256). Although there was some controversy for a while, discussions with Gavin, Andrew and others led to establishing that the size of values on the stack should be limited to 32 bytes; the other alternative being considered, unlimited-size integers, had the problem that it was too difficult to figure out how much gas to charge for additions, multiplications and other operations.
+
+![gavwoodmessage](https://vitalik.ca/images/prehistory-files/amiller2.png)
