@@ -27,3 +27,8 @@
 [https://web.archive.org/web/20131219030753/http://vitalik.ca/ethereum.html](https://web.archive.org/web/20131219030753/http://vitalik.ca/ethereum.html)
 
  ![Ultimate Scripting V2](https://vitalik.ca/images/prehistory-files/ethereumwhitepaper.png)
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;你可以看到大量重新架构的结果，这主要是由于我在11月份在旧金山进行了一次长途步行，期间我意识到智能合约可以完全通用化。与用脚本语言简单描述双方关系条款不同，合约本身是更加完善的账户，能够持有，发送，收取资产，并且还可以维护持久存储（当时，持久存储被称为“内存”，而唯一的零时“内存”是256个寄存器）。把脚本语言从基于栈的机器切换到基于寄存器，是我自己的决心。除了看起来更加复杂外，其他方面我毫无异议。
+
+&nbsp;&nbsp;&nbsp;&nbsp;此外，请注意收费机制内置其中：
+![transcation fee](https://vitalik.ca/images/prehistory-files/txfee.png)
