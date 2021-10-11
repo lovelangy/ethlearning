@@ -59,6 +59,13 @@
 
 2014年初前后，以太坊也做了一些基于其他人建议的修改。在Andrew Miller和其他人的想法建议下，我们最终退回到基于栈的架构。
 
-Charles Hoskinson suggested the switch from Bitcoin's SHA256 to the newer SHA3 (or, more accurately, keccak256). Although there was some controversy for a while, discussions with Gavin, Andrew and others led to establishing that the size of values on the stack should be limited to 32 bytes; the other alternative being considered, unlimited-size integers, had the problem that it was too difficult to figure out how much gas to charge for additions, multiplications and other operations.
+&nbsp;&nbsp;&nbsp;&nbsp; Charle Hoskinson 建议把从比特币的SHA256算法迁移到更新的SHA3（或者更确切的说是keccak256）。虽然一度有争议，但经过和Gavin，Andrew及其他人讨论之后，最终决定将栈的大小限制在32字节，另外一个考虑中替代的方案是无限制整数，它的问题在于很难对加法，乘法等其他操作计算应该收取多少燃料费。
 
 ![gavwoodmessage](https://vitalik.ca/images/prehistory-files/amiller2.png)
+
+时间退回到2014年一月份，我们脑海中最初的挖矿算法是被称作Dagger的新玩意。
+
+[https://github.com/ethereum/wiki/blob/master/Dagger.md](https://github.com/ethereum/wiki/blob/master/Dagger.md)
+
+![dagger](https://vitalik.ca/images/prehistory-files/daggerspec.png)
+
