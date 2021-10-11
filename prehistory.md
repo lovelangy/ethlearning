@@ -79,4 +79,6 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;我们考虑下一个算法叫随机电路，这个[Google文档]((https://docs.google.com/document/d/19c0L7_1neWpTN-jYwW-87mzrTTmS2h3lAYxXpRAvPfo))有详细描述。它是由我和Vlad Zamfir提出，并由Matthew Wampler-Doty和其他人审阅。这个想法是在挖矿算法中通过执行随机生成的电路来模拟通用计算。并没有确凿的证据表明它行不通，但是2014年间我们接触的硬件专家都对此表示悲观。Matthew Wampler-Doty本人建议基于SAT完备问题解决方案的算法，但这个提议最终被拒绝。
 
-&nbsp;&nbsp;&nbsp;&nbsp;最后，我们又回到原点用一个叫做“Dagger Hashimoto”的算法。 有时简称为“Dashimoto”，它借鉴了 Hashimoto 的许多想法，这是 Thaddeus Dryja 提出的工作量证明算法，他开创了“I/O 密集工作量证明”的概念，其中挖矿速度的主要限制因素是不是每秒哈希数，而是每秒 RAM 访问数兆字节。但它同时结合了 Dagger算法中对轻客户端友好 DAG 生成数据集的概念。经过我自己、Matthew、Tim 和其他人的多次优化，这些想法最终融合到我们现在称为 Ethash 的算法中。
+&nbsp;&nbsp;&nbsp;&nbsp;最后，我们又回到原点用一个叫做“Dagger Hashimoto”的算法。 有时简称为“Dashimoto”，它借鉴了 [Hashimoto](https://pdfs.semanticscholar.org/3b23/7cc60c1b9650e260318d33bec471b8202d5e.pdf) 的许多想法，这是 Thaddeus Dryja 提出的工作量证明算法，他开创了“I/O 密集工作量证明”的概念，其中挖矿速度的主要限制因素是不是每秒哈希数，而是每秒 RAM 访问数兆字节。但它同时结合了 Dagger算法中对轻客户端友好 DAG 生成数据集的概念。经过我自己、Matthew、Tim 和其他人的多次优化，这些想法最终融合到我们现在称为 [Ethash](https://github.com/ethereum/wiki/wiki/Ethash) 的算法中。
+
+ ![Ultimate Scripting V2](https://vitalik.ca/images/prehistory-files/hashimoto.png)
