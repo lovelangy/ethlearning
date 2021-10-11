@@ -45,7 +45,7 @@
  
  ![gavwoodmessage](https://vitalik.ca/images/prehistory-files/jeffreywilcke.png)
  <p align="center"> "你好Jeremy, 很高兴看到你对以太坊有兴趣..." </p>
- <p align="center"><sub><sup>*(译者注：V神貌似把名字搞错了，对方叫Jeffrey不是Jeremy)*</sup></sub></p>
+ <p align="center"><sub><sup>(译者注：V神貌似把名字搞错了，对方叫Jeffrey不是Jeremy)</sup></sub></p>
  
  &nbsp;&nbsp;&nbsp;&nbsp;Gavin的最初贡献是两方面的。首先，你可能注意到了合约的调用模型最初的设计是异步的：虽然合约A可以给合约B创建一个“内部交易”（“内部交易”是Etherscan的术语，一开始它们只被叫做“交易”，后来叫“消息调用”或者“调用”），内部交易的执行只有在第一个交易的执行完全结束之后才会开始。这意味着交易不能用内部交易来获取其他合约的信息；唯一的方式是额外操作码（有点像SLOAD，你可以用它才读取其他合约的存储信息）。在Gavin和其他人的支持下，这个设计后来被摒弃。
 
@@ -82,3 +82,8 @@
 &nbsp;&nbsp;&nbsp;&nbsp;最后，我们又回到原点用一个叫做“Dagger Hashimoto”的算法。 有时简称为“Dashimoto”，它借鉴了 [Hashimoto](https://pdfs.semanticscholar.org/3b23/7cc60c1b9650e260318d33bec471b8202d5e.pdf) 的许多想法，这是 Thaddeus Dryja 提出的工作量证明算法，他开创了“I/O 密集工作量证明”的概念，其中挖矿速度的主要限制因素是不是每秒哈希数，而是每秒 RAM 访问数兆字节。但它同时结合了 Dagger算法中对轻客户端友好 DAG 生成数据集的概念。经过我自己、Matthew、Tim 和其他人的多次优化，这些想法最终融合到我们现在称为 [Ethash](https://github.com/ethereum/wiki/wiki/Ethash) 的算法中。
 
  ![Ultimate Scripting V2](https://vitalik.ca/images/prehistory-files/hashimoto.png)
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;到2014年夏天的时候，以太坊协议已经相当稳定，一个重大例外是工作量证明算法要到2015年初才达到Ethash阶段，同时一份半正式的规范以Gavin的[黄皮书](http://gavwood.com/Paper.pdf)形式出现。
+ 
+ ![Ultimate Scripting V2](https://vitalik.ca/images/prehistory-files/yellowpaper.png)
+ 
