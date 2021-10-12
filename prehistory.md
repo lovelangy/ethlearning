@@ -107,3 +107,11 @@
 &nbsp;&nbsp;&nbsp;&nbsp;2015 年初，Jutta Steiner 等人组织了以太坊发布前安全审计，其中包括软件代码审计和学术审计。软件审计主要针对 C++ 和 Go 实现，分别由 Gavin Wood 和 Jeffrey Wilcke 领导，不过也对我的 pyethereum 实现进行了较小规模的审计。在两次学术审计中，一次由 Ittay Eyal（以发现“自私挖矿”攻击著称）进行，另一次由 Andrew Miller 和来自Least Authority公司（<sub><sup>*译者注：Least Authority是业内知名的网络安全审计公司*</sub></sup>）的其他人进行。 Eyal 审计导致了一个小的协议更改：链的总难度将不包括叔块。 Least Authority 审计更侧重于智能合约和燃料费经济学，以及 Patricia 树。这次审计导致了协议层面的几个变化。一个小改动是使用sha3(addr)和sha3(key)作为Trie树的键值，而不是直接使用address和key；这将使对Trie树执行最坏情况攻击变得更加困难。
 
 ![Ultimate Scripting V2](https://vitalik.ca/images/prehistory-files/leastauthority.png)
+
+ <p align="center"> 还有一个在当时看来过于超前的警告 </p>
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;我们讨论的另一件重要事情是燃料费上限的投票机制。当时，我们已经对比特币区块大小扩容的辩论缺乏进展感到担忧，我们希望以太坊设计更灵活，可以根据需要随着时间的推移进行调整。但挑战是：燃料费最佳上限应该设置为多少？我最初的想法是制定一个动态上限，将其设置为实际燃料费使用量的长期指数移动平均数的1.5倍，这样从长远来看平均每个区块会被填满2/3。然而，Andrew向我们展示了这在某些方面是有安全漏洞的——具体来说，想要提高上限的矿工只需将交易包含在他们自己的区块中，这些交易消耗了大量的燃料费，但只需要减少的处理时间，他们由此可以无成本的创建完整的区块。因此，安全模式至少在更好的方向上前进，相当于简单地让矿工对燃料费上限进行投票。
+
+&nbsp;&nbsp;&nbsp;&nbsp;我们没有相当一个更不容易被破坏的燃料费限制策略，因此 Andrew 推荐的解决方案是简单地让矿工明确地对燃料费上限进行投票，并将投票的默认策略设为 1.5倍EMA（<sub><sup>(译者注：即Exponential Moving Average指数平均数指标）</sup></sub>。原因是我们离找到设置最大燃料上限最佳方案尚远，而且任何特定方法失败的风险似乎大于矿工滥用投票权的风险。因此，我们不妨干脆让矿工对燃料上限进行投票，接受极限过高或过低的风险，以换取灵活性的好处，以及矿工协同工作的快速调整能力根据需要调高或调低上限。
+
+![Ultimate Scripting V2](https://vitalik.ca/images/prehistory-files/berlin.png)
