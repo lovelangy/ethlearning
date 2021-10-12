@@ -28,7 +28,7 @@
 
  ![Ultimate Scripting V2](https://vitalik.ca/images/prehistory-files/ethereumwhitepaper.png)
  
-&nbsp;&nbsp;&nbsp;&nbsp;你可以看到大量重新架构的结果，这主要是由于我在11月份在旧金山进行了一次长途步行，期间我意识到智能合约可以完全通用化。与用脚本语言简单描述双方关系条款不同，合约本身是更加完善的账户，能够持有，发送，收取资产，并且还可以维护持久存储（当时，持久存储被称为“内存”，而唯一的零时“内存”是256个寄存器）。把脚本语言从基于栈的机器切换到基于寄存器，是我自己的决心。除了看起来更加复杂外，其他方面我毫无异议。
+&nbsp;&nbsp;&nbsp;&nbsp;你可以看到大量重新架构的结果，这主要是由于我在11月份在旧金山进行了一次长途步行，期间我意识到智能合约可以完全通用化。与用脚本语言简单描述双方关系条款不同，合约本身是更加完善的账户，能够持有，发送，收取资产，并且还可以维护持久存储（当时，持久存储被称为“内存”，而唯一的临时“内存”是256个寄存器）。把脚本语言从基于栈的机器切换到基于寄存器，是我自己的决断。除了看起来更加复杂外，其他方面我毫无异议。
 
 &nbsp;&nbsp;&nbsp;&nbsp;此外，请注意收费机制内置其中：
 
@@ -57,13 +57,13 @@
 
 <img src="https://vitalik.ca/images/prehistory-files/web3suite.png" width="80%">
 
-2014年初前后，以太坊也做了一些基于其他人建议的修改。在Andrew Miller和其他人的想法建议下，我们最终退回到基于栈的架构。
+2014年初前后，基于其他人建议的,以太坊也做了一些修改。比如，在Andrew Miller和其他人的想法建议下，我们最终退回到基于栈的架构。
 
-&nbsp;&nbsp;&nbsp;&nbsp;Charle Hoskinson 建议把从比特币的SHA256算法迁移到更新的SHA3（或者更确切的说是keccak256）。虽然一度有争议，但经过和Gavin，Andrew及其他人讨论之后，最终决定将栈的大小限制在32字节，另外一个考虑中替代的方案是无限制整数，它的问题在于很难对加法，乘法等其他操作计算应该收取多少燃料费。
+&nbsp;&nbsp;&nbsp;&nbsp;Charle Hoskinson建议把从比特币的SHA256算法迁移到更新的SHA3（或者更确切的说是keccak256）。虽然一度有争议，但经过和Gavin，Andrew及其他人讨论之后，最终决定将栈的大小限制在32字节，另外一个考虑中替代的方案是无限制整数，它的问题在于很难计算出加法，乘法等其他操作应该收取多少燃料费。
 
 ![gavwoodmessage](https://vitalik.ca/images/prehistory-files/amiller2.png)
 
-时间退回到2014年一月份，我们脑海中最初的挖矿算法是被称作Dagger的新玩意。
+2014年一月份，我们脑海中最初的挖矿算法是被称作Dagger的新玩意。
 
 [https://github.com/ethereum/wiki/blob/master/Dagger.md](https://github.com/ethereum/wiki/blob/master/Dagger.md)
 
@@ -104,7 +104,7 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;这都是在 PoC7 中实现的；在 PoC7 之后，协议并没有真正改变太多，除了微小的但在某些情况下很重要的改动，具体细节会通过安全审计发布。
 
-&nbsp;&nbsp;&nbsp;&nbsp;2015 年初，Jutta Steiner 等人组织了以太坊发布前安全审计，其中包括软件代码审计和学术审计。软件审计主要针对 C++ 和 Go 实现，分别由 Gavin Wood 和 Jeffrey Wilcke 领导，不过也对我的 pyethereum 实现进行了较小规模的审计。在两次学术审计中，一次由 Ittay Eyal（以发现“自私挖矿”攻击著称）进行，另一次由 Andrew Miller 和来自Least Authority公司（<sub><sup>*译者注：Least Authority是业内知名的网络安全审计公司*</sub></sup>）的其他人进行。 Eyal 审计导致了一个小的协议更改：链的总难度将不包括叔块。 Least Authority 审计更侧重于智能合约和燃料费经济学，以及 Patricia 树。这次审计导致了协议层面的几个变化。一个小改动是使用sha3(addr)和sha3(key)作为Trie树的键值，而不是直接使用address和key；这将使对Trie树执行最坏情况攻击变得更加困难。
+&nbsp;&nbsp;&nbsp;&nbsp;2015 年初，Jutta Steiner等人组织了以太坊发布前安全审计，其中包括软件代码审计和学术审计。软件审计主要针对 C++ 和 Go 实现，分别由 Gavin Wood 和 Jeffrey Wilcke 领导，不过也对我的 pyethereum 实现进行了较小规模的审计。在两次学术审计中，一次由 Ittay Eyal（以发现“自私挖矿”攻击著称）进行，另一次由 Andrew Miller 和来自Least Authority公司（<sub><sup>*译者注：Least Authority是业内知名的网络安全审计公司*</sub></sup>）的其他人进行。 Eyal 审计导致了一个小的协议更改：链的总难度将不包括叔块。 Least Authority 审计更侧重于智能合约和燃料费经济学，以及 Patricia 树。这次审计导致了协议层面的几个变化。一个小改动是使用sha3(addr)和sha3(key)作为Trie树的键值，而不是直接使用address和key；这将使对Trie树执行最坏情况攻击变得更加困难。
 
 ![Ultimate Scripting V2](https://vitalik.ca/images/prehistory-files/leastauthority.png)
 
@@ -112,12 +112,11 @@
  
 &nbsp;&nbsp;&nbsp;&nbsp;我们讨论的另一件重要事情是燃料费上限的投票机制。当时，我们已经对比特币区块大小扩容的辩论缺乏进展感到担忧，我们希望以太坊设计更灵活，可以根据需要随着时间的推移进行调整。但挑战是：燃料费最佳上限应该设置为多少？我最初的想法是制定一个动态上限，将其设置为实际燃料费使用量的长期指数移动平均数的1.5倍，这样从长远来看平均每个区块会被填满2/3。然而，Andrew向我们展示了这在某些方面是有安全漏洞的——具体来说，想要提高上限的矿工只需将交易包含在他们自己的区块中，这些交易消耗了大量的燃料费，但只需要减少的处理时间，他们由此可以无成本的创建完整的区块。因此，安全模式至少在更好的方向上前进，相当于简单地让矿工对燃料费上限进行投票。
 
-&nbsp;&nbsp;&nbsp;&nbsp;我们想不出一个更不容易被破坏的燃料费限制策略，因此 Andrew 推荐的解决方案是简单地让矿工明确地对燃料费上限进行投票，并将投票的默认策略设为 1.5倍EMA（<sub><sup>(译者注：即Exponential Moving Average指数平均数指标）</sup></sub>。原因是我们离找到设置最大燃料上限最佳方案尚远，而且任何特定方法失败的风险似乎大于矿工滥用投票权的风险。因此，我们不妨干脆让矿工对燃料上限进行投票，接受极限过高或过低的风险，以换取灵活性的好处，以及矿工协同工作的快速调整能力根据需要调高或调低上限。
+&nbsp;&nbsp;&nbsp;&nbsp;我们想不出一个更不容易被破坏的燃料费限制策略，因此Andrew推荐的解决方案是简单地让矿工明确地对燃料费上限进行投票，并将投票的默认策略设为 1.5倍EMA（<sub><sup>(译者注：即Exponential Moving Average指数平均数指标）</sup></sub>。原因是我们离找到设置最大燃料上限最佳方案尚远，而且任何特定方法失败的风险似乎大于矿工滥用投票权的风险。因此，我们不妨干脆让矿工对燃料费上限进行投票，接受上限过高或过低的风险来换取灵活性的好处，以及矿工协同工作的快速调整能力根据需要调高或调低上限。
 
 ![Ultimate Scripting V2](https://vitalik.ca/images/prehistory-files/berlin.png)
 
-&nbsp;&nbsp;&nbsp;&nbsp;在 Gavin、Jeff 和我进行了一次迷你黑客马拉松后，PoC9 于 3 月推出，旨在成为概念验证的最终发布。一个名为Olympic的测试网运行了四个月，使用了旨在用于livenet的协议，并且我们还制定了以太坊的长期计划。 Vinay Gupta 写了一篇博客文章[“以太坊启动过程”](https://blog.ethereum.org/2015/03/03/ethereum-launch-process/)，描述了以太坊livenet开发的四个预期阶段，并给了他们现在的名字：Frontier、Homestead、Metropolis 和 Serenity。
+&nbsp;&nbsp;&nbsp;&nbsp;在Gavin、Jeff和我进行了一次迷你黑客马拉松后，PoC9 于3月推出，它旨在成为概念验证的最终发布版。一个名为Olympic的测试网运行了四个月，使用了旨在用于livenet的协议，并且我们还制定了以太坊的长期计划。Vinay Gupta 写了一篇博客文章[“以太坊上线过程”](https://blog.ethereum.org/2015/03/03/ethereum-launch-process/)，描述了以太坊livenet开发的四个预期阶段，并给了他们现在的名字：Frontier、Homestead、Metropolis 和 Serenity。
 
-&nbsp;&nbsp;&nbsp;&nbsp;Olympic的测试网运行了四个月。在前两个月，在以太坊不同实现中都发现了许多错误，发生了共识失败等问题，但在6月左右，网络明显稳定下来。 7 月我们决定冻结代码，并于 7 月 30 日发布了以太坊。
-
+&nbsp;&nbsp;&nbsp;&nbsp;Olympic的测试网运行了四个月。在前两个月，在以太坊不同实现中都发现了许多错误，发生了共识失败等问题，但在6月左右，网络明显稳定下来。7月我们决定冻结代码，并于7月30日发布了以太坊。
 ![Ultimate Scripting V2](https://vitalik.ca/images/prehistory-files/release.png)
